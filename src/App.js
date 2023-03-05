@@ -13,11 +13,12 @@ import {
 export default class App extends Component {
   render() {
     return (
+
       <Router >
       <div >
         <Navbar />
         <Routes>
-          <Route exact path="/" element={<News key="general" pageSize={6} country="in" category="general"/>}></Route>
+          <Route exact path="/NewsApp" element={<News key="general" pageSize={6} country="in" category="general"/>}></Route>
           <Route exact path="/business" element={<News key="business" pageSize={6} country="in" category="business"/>}></Route>
           <Route exact path="/entertainment" element={<News key="entertainment" pageSize={6} country="in" category="entertainment"/>} ></Route>
           <Route exact path="/health" element={<News key="health" pageSize={6} country="in" category="health"/>}></Route>
