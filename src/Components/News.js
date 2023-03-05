@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 
 
 export class News extends Component {
+  
    static defaultProps={
     country:'in',
     pageSize:'8',
@@ -25,7 +26,7 @@ export class News extends Component {
         }
     }
    async componentDidMount(){
-        let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=9e62e24a9ed94033b598d8f7d86cd4a4&pageSize=${this.props.pageSize}`
+        let url=`https://saurav.tech/NewsAPI/top-headlines/category/${this.props.category}/${this.props.country}.json`
         this.setState({loading:true});
         let data=await fetch(url);
         let parsedData=await data.json();
@@ -42,7 +43,7 @@ export class News extends Component {
         }
         else
         {
-        let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=9e62e24a9ed94033b598d8f7d86cd4a4&page=${this.state.page+1}&pageSize=${this.props.pageSize}`;
+        let url=`https://saurav.tech/NewsAPI/top-headlines/category/science/us.json`;
         this.setState({loading:true});
         let data=await fetch(url);
           let parsedData=await data.json();
@@ -55,7 +56,7 @@ export class News extends Component {
 
       }
       handlePrevClick=async()=>{
-        let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=9e62e24a9ed94033b598d8f7d86cd4a4&page=${this.state.page-1}&pageSize=${this.props.pageSize}`;
+        let url=`https://saurav.tech/NewsAPI/top-headlines/category/sports/us.json`
         this.setState({loading:true});
         let data=await fetch(url);
         let parsedData=await data.json();
@@ -72,7 +73,7 @@ export class News extends Component {
   render() {
 
     return (
-      <div className='container my-3'>
+      <div className='container my-3 '>
          <h1 className='text-center' style={{margin:'35px 0px'}}>NewsApp-Top Headlines</h1>
         {this.state.loading&&<Spinner />}
          <div className="row">

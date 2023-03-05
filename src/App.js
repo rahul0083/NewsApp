@@ -14,7 +14,7 @@ export default class App extends Component {
   render() {
     return (
       <Router>
-      <div>
+      <div >
         <Navbar />
         <Routes>
           <Route exact path="/" element={<News key="general" pageSize={6} country="in" category="general"/>}></Route>
@@ -24,6 +24,7 @@ export default class App extends Component {
           <Route exact path="/science" element={<News key="science" pageSize={6} country="in" category="science"/>}></Route>
           <Route exact path="/sports" element={<News key="sports" pageSize={6} country="in" category="sports"/>}></Route>
           <Route exact path="/general" element={<News key="general" pageSize={6} country="in" category="general"/>}></Route>
+          <Route exact path="/technology" element={<News key="technology" pageSize={6} country="in" category="technology"/>}></Route>
         </Routes>
      
       
